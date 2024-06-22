@@ -6,6 +6,9 @@ The text extracted from these APIs can later be used with natural language proce
 # Installation
 **FIles**
 Download the following files to help you get started:
+ M6_starter_code
+ .env
+ 
 Before starting the Challenge, be sure to complete the following steps:
   * Create a new repository for this project called data-sourcing-challenge. Do not add this homework assignment to an existing repository.
      When creating your new repository, under the "Add .gitignore" option, make sure you select "Python". This will prevent you from accidentally uploading your API keys in your .env file, exposing them to the world.
@@ -23,9 +26,11 @@ The starter code includes importing the required dependencies and your API keys 
 **Part 1: Access the New York Times API**
   1. The base URL is included in the starter code, along with the search string and query dates. Consult the New York Times Article Search API documentationLinks to an external site. to help you build your query_url using these variables.
 If you accidentally delete these variables, they are:
+
 ![image](https://github.com/ReccaS/data_sourcing_challenge/assets/168928543/cf88acde-cdcc-4dd4-842e-44c30cf34e89)
-  2. Create an empty list called reviews_list to store the reviews you retrieve from the API.
-  3. The Article Search API limits results to 10 per page, but we want to try to retrieve 200. To do this, create a for loop to loop through 20 pages (starting from page 0). Inside the loop, perform the following actions:
+
+  3. Create an empty list called reviews_list to store the reviews you retrieve from the API.
+  4. The Article Search API limits results to 10 per page, but we want to try to retrieve 200. To do this, create a for loop to loop through 20 pages (starting from page 0). Inside the loop, perform the following actions:
     * Extend the query_url created in Step 1 to include the page parameter.
     * Make a GET request to retrieve the page of results, and store the JSON data in a variable called reviews.
     * Add a 12-second interval between queries to stay within API query limits.
@@ -34,16 +39,19 @@ If you accidentally delete these variables, they are:
        * try: loop through the reviews["response"]["docs"] and append each review to the list, then print out the query page number (i.e. the number of times the loop has executed).
        * except: Print the page number that had no results then break from the loop.
           **Note:** If your loop breaks at the except clause, it is possible you have tried to make a request that fell outside of the rate limit. You should be able to loop through all 20 pages with the provided query parameters.
-  4. Preview the first five results in JSON format using json.dumps with the argument indent=4 to format the data.
-  5. Convert reviews_list to a Pandas DataFrame using json_normalize()
-  6. Extract the movie title from the "headline.main" column and save it to a new column "title". To do this, you will use the Pandas apply() method and the following lambda function:
+  5. Preview the first five results in JSON format using json.dumps with the argument indent=4 to format the data.
+  6. Convert reviews_list to a Pandas DataFrame using json_normalize()
+  7. Extract the movie title from the "headline.main" column and save it to a new column "title". To do this, you will use the Pandas apply() method and the following lambda function:
+     
   ![image](https://github.com/ReccaS/data_sourcing_challenge/assets/168928543/8fa4b67c-e0c4-4e22-bc5b-99c27abb4909)
+  
   This code takes the string in the cell and extracts the characters between the unicode quotation marks, as long as a space and the word "Review" follows the closing quotation mark.
-  7. Use the supplied extract_keywords function to convert the "keywords" column from a list of dictionaries to strings using the apply() method.
-  8. Create a list called titles from the "title" column using to_list(). These titles will be used in the query for The Movie Database.
+  9. Use the supplied extract_keywords function to convert the "keywords" column from a list of dictionaries to strings using the apply() method.
+  10. Create a list called titles from the "title" column using to_list(). These titles will be used in the query for The Movie Database.
 **Part 2: Access The Movie Database API**
 Consult the Search & Query for Details documentationLinks to an external site. to build your query URLs. You will be making both types of requests to extract all of the details you need:
   * The search query is used to find the movie ID from the search by title. Most of this query is included in your starter code, as follows, but you will need to include the movie title in the query.
+    
 ![image](https://github.com/ReccaS/data_sourcing_challenge/assets/168928543/d50a0246-c55e-4865-a974-ee8cb8bc84a5)
 
   * The movie query is made once you have the movie ID.
