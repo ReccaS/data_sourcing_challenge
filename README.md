@@ -26,14 +26,16 @@ This Challenge has three parts, and must be completed in order:
   * Part 2: Access The Movie Database API.
   * Part 3: Merge and Clean the Data for Export.
 The starter code includes importing the required dependencies and your API keys from your .env file, but you will need to ensure your API keys are added to that file.
+
 **Part 1: Access the New York Times API**
+
   1. The base URL is included in the starter code, along with the search string and query dates. Consult the New York Times Article Search API documentationLinks to an external site. to help you build your query_url using these variables.
 If you accidentally delete these variables, they are:
 
 ![image](https://github.com/ReccaS/data_sourcing_challenge/assets/168928543/cf88acde-cdcc-4dd4-842e-44c30cf34e89)
 
-  3. Create an empty list called reviews_list to store the reviews you retrieve from the API.
-  4. The Article Search API limits results to 10 per page, but we want to try to retrieve 200. To do this, create a for loop to loop through 20 pages (starting from page 0). Inside the loop, perform the following actions:
+  2. Create an empty list called reviews_list to store the reviews you retrieve from the API.
+  3. The Article Search API limits results to 10 per page, but we want to try to retrieve 200. To do this, create a for loop to loop through 20 pages (starting from page 0). Inside the loop, perform the following actions:
     * Extend the query_url created in Step 1 to include the page parameter.
     * Make a GET request to retrieve the page of results, and store the JSON data in a variable called reviews.
     * Add a 12-second interval between queries to stay within API query limits.
@@ -42,9 +44,9 @@ If you accidentally delete these variables, they are:
        * try: loop through the reviews["response"]["docs"] and append each review to the list, then print out the query page number (i.e. the number of times the loop has executed).
        * except: Print the page number that had no results then break from the loop.
           **Note:** If your loop breaks at the except clause, it is possible you have tried to make a request that fell outside of the rate limit. You should be able to loop through all 20 pages with the provided query parameters.
-  5. Preview the first five results in JSON format using json.dumps with the argument indent=4 to format the data.
-  6. Convert reviews_list to a Pandas DataFrame using json_normalize()
-  7. Extract the movie title from the "headline.main" column and save it to a new column "title". To do this, you will use the Pandas apply() method and the following lambda function:
+  4. Preview the first five results in JSON format using json.dumps with the argument indent=4 to format the data.
+  5. Convert reviews_list to a Pandas DataFrame using json_normalize()
+  6. Extract the movie title from the "headline.main" column and save it to a new column "title". To do this, you will use the Pandas apply() method and the following lambda function:
      
   ![image](https://github.com/ReccaS/data_sourcing_challenge/assets/168928543/8fa4b67c-e0c4-4e22-bc5b-99c27abb4909)
   
