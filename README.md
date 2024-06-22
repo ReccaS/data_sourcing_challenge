@@ -5,7 +5,9 @@ You've been tasked to prepare some data for a recommendation system to help peop
 The text extracted from these APIs can later be used with natural language processing methods.
 # Installation
 **FIles**
+
 Download the following files to help you get started:
+
  M6_starter_code
  .env
  
