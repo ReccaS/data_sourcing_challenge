@@ -99,5 +99,5 @@ Now that you have collected the data from both APIs, you need to merge the two D
   3. Delete any duplicate rows and reset the index.
   4. Export data to a CSV file without the DataFrame's index.
 # References
-
+Python code file from edX Boot Camps LLC, and is intended for educational purposes only.
 
