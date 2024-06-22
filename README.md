@@ -81,7 +81,9 @@ You will use the titles list created in Part 1 to perform your queries with The 
     * Use the except clause to print out a statement if a movie is not found.
   4. Preview the first five results in JSON format using json.dumps with the argument indent=4 to format the data.
   5. Convert the results to a DataFrame called tmdb_df with pd.DataFrame(). You don't need to use json_normalize() this time because we don't have nested objects.
+
 **Part 3: Merge and Clean the Data for Export**
+
 Now that you have collected the data from both APIs, you need to merge the two DataFrames and clean the data, then export it for future use.
   1. Merge the New York Times reviews and TMDB DataFrames on the title column.
   2. The genres, spoken_languages, and production_countries columns were saved as lists, but we want the columns to be strings without the list characters ([, ], and '). To fix these columns, perform the following actions:
