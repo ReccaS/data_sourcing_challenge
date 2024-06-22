@@ -51,8 +51,9 @@ If you accidentally delete these variables, they are:
   ![image](https://github.com/ReccaS/data_sourcing_challenge/assets/168928543/8fa4b67c-e0c4-4e22-bc5b-99c27abb4909)
   
   This code takes the string in the cell and extracts the characters between the unicode quotation marks, as long as a space and the word "Review" follows the closing quotation mark.
-  9. Use the supplied extract_keywords function to convert the "keywords" column from a list of dictionaries to strings using the apply() method.
-  10. Create a list called titles from the "title" column using to_list(). These titles will be used in the query for The Movie Database.
+  
+  7. Use the supplied extract_keywords function to convert the "keywords" column from a list of dictionaries to strings using the apply() method.
+  8. Create a list called titles from the "title" column using to_list(). These titles will be used in the query for The Movie Database.
 
 **Part 2: Access The Movie Database API**
 
