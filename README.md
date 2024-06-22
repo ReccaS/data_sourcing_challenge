@@ -51,7 +51,9 @@ If you accidentally delete these variables, they are:
   This code takes the string in the cell and extracts the characters between the unicode quotation marks, as long as a space and the word "Review" follows the closing quotation mark.
   9. Use the supplied extract_keywords function to convert the "keywords" column from a list of dictionaries to strings using the apply() method.
   10. Create a list called titles from the "title" column using to_list(). These titles will be used in the query for The Movie Database.
+
 **Part 2: Access The Movie Database API**
+
 Consult the Search & Query for Details documentationLinks to an external site. to build your query URLs. You will be making both types of requests to extract all of the details you need:
   * The search query is used to find the movie ID from the search by title. Most of this query is included in your starter code, as follows, but you will need to include the movie title in the query.
     
