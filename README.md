@@ -9,6 +9,7 @@ The text extracted from these APIs can later be used with natural language proce
 Download the following files to help you get started:
 
  M6_starter_code
+ 
  .env
  
 Before starting the Challenge, be sure to complete the following steps:
